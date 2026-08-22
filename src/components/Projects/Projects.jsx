@@ -9,17 +9,17 @@ import ikigai from "../../Assets/Projects/ikigai funnel.png";
 import jobhub from "../../Assets/Projects/jobhub.png";
 import pred from "../../Assets/Projects/pred serv.png";
 import uvm from "../../Assets/Projects/uvm.jpg";
+import { useTranslation } from "react-i18next";
 
 function Projects() {
+  const { t } = useTranslation();
   return (
     <Container fluid className="project-section">
       <Particle />
       <Container>
-        <h1 className="project-heading">
-          My Recent <strong className="purple">Works </strong>
-        </h1>
+        <h1 className="project-heading" dangerouslySetInnerHTML={{ __html: t("projects.recent") }}></h1>
         <p style={{ color: "white" }}>
-          Here are a few projects I've worked on recently.
+          {t("projects.here")}
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
 
@@ -28,7 +28,7 @@ function Projects() {
               imgPath={design}
               isBlog={false}
               title="Bluestage AI"
-              description="Sass & CRM solutions, Designs, Developent and Management on GoHighLevel, Chatbots and Automations"
+              description={t("projects.dc1")}
               demoLink="https://bluestage.ai/"
             />
           </Col>
@@ -38,7 +38,7 @@ function Projects() {
               imgPath={ikigai}
               isBlog={false}
               title="Ikigai"
-              description="Funnel website for travel agency"
+              description={t("projects.dc2")}
               demoLink="https://solucion.ikigai.com.ec/"
             />
           </Col>
@@ -48,7 +48,7 @@ function Projects() {
               imgPath={pred}
               isBlog={false}
               title="Pred Serv"
-              description="Portfolio Business Website for share services, online presence and obtain new clients"
+              description={t("projects.dc3")}
               demoLink="https://predservengenharia.com.br/"
             />
           </Col>
@@ -58,7 +58,7 @@ function Projects() {
               imgPath={leaf}
               isBlog={false}
               title="Nautika"
-              description="Wordpress + WooCommerce website for a Croatian company that sells and rents boats."
+              description={t("projects.dc4")}
               demoLink="https://nautika.evisitor.hr/?lang=hr/"              
             />
           </Col>
@@ -68,7 +68,7 @@ function Projects() {
               imgPath={uvm}
               isBlog={false}
               title="SICA 2.0 / Blackboard UVM"
-              description="Modernization of 2 Mexican university websites that are used for their management and organization.."
+              description={t("projects.dc5")}
               ghLink="https://unitecsica.com/"
               demoLink="https://uvmonline.blackboard.com/webapps/login/"
             />
@@ -79,8 +79,8 @@ function Projects() {
               imgPath={jobhub}
               style={{ width: "30px" }}
               isBlog={false}
-              title="Job Hub 1st Team Project"
-              description="This is the final Project of Soy Henry's graduation that I and five of my classmates managed to do as a team."
+              title="Job Hub"
+              description={t("projects.dc6")}
               ghLink="https://github.com/OwenConW/JobHubApp"
               demoLink="https://jobhub.vercel.app/"
             />

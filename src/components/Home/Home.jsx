@@ -11,8 +11,11 @@ import {
   AiFillInstagram,
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 function Home() {
+  const { t } = useTranslation();
+
   return (
     <section>
       <Container fluid className="home-section" id="home">
@@ -21,15 +24,15 @@ function Home() {
           <Row>
             <Col md={7} className="home-header">
               <h1 style={{ paddingBottom: 15 }} className="heading">
-                Hello Dear!{" "}
+                {t("home.hello")}
                 <span className="wave" role="img" aria-labelledby="wave">
                   👋🏻
                 </span>
               </h1>
 
               <h1 className="heading-name">
-                I'm
-                <strong className="main-name"> Jeremias Escobedo</strong>
+                {t("home.iam")}
+                <strong className="main-name">Jeremias Escobedo</strong>
               </h1>
 
               <div style={{ padding: 50, textAlign: "left" }}>
@@ -48,14 +51,15 @@ function Home() {
           </Row>
         </Container>
       </Container>
+
       <Home2 />
 
       <Container>
         <Row style={{ paddingTop: "50px", paddingBottom: "80px" }}>
           <Col md={12} className="home-about-social">
-            <h1>Find Me On</h1>
-            <p>
-              Feel free to <span className="purple">connect </span>with me
+            <h1>{t("home.find")}</h1>
+            <p dangerouslySetInnerHTML={{ __html: t('home.connect') }}>
+             {/* Feel free to <span className="purple">connect </span>with me */}
             </p>
             <ul className="home-about-social-links">
               <li className="social-icons">
